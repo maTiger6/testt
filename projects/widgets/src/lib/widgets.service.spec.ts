@@ -10,6 +10,10 @@ describe('WidgetsService', () => {
 		service = TestBed.inject(WidgetsService);
 	});
 
+	afterAll((done) => {
+		done();
+	});
+
 	it('should be created', () => {
 		expect(service).toBeTruthy();
 	});

@@ -10,6 +10,10 @@ describe('BlogDomainService', () => {
 		service = TestBed.inject(BlogDomainService);
 	});
 
+	afterAll((done) => {
+		done();
+	});
+
 	it('should be created', () => {
 		expect(service).toBeTruthy();
 	});

@@ -25,10 +25,17 @@
 					"defaultConfiguration": "production"
 				},
 				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
+					"builder": "@angular-builders/jest:run",
+					"options": {}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"tsConfig": "projects/blog-domain/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"lintFilePatterns": [
+							"projects/blog-domain/**/*.ts",
+							"projects/blog-domain/**/*.html"
+						],
+						"eslintConfig": "projects/blog-domain/eslint.config.mjs"
 					}
 				}
 			}
@@ -55,10 +62,17 @@
 					"defaultConfiguration": "production"
 				},
 				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
+					"builder": "@angular-builders/jest:run",
+					"options": {}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"tsConfig": "projects/widgets/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"lintFilePatterns": [
+							"projects/widgets/**/*.ts",
+							"projects/widgets/**/*.html"
+						],
+						"eslintConfig": "projects/widgets/eslint.config.mjs"
 					}
 				}
 			}
@@ -144,25 +158,24 @@
 					"builder": "@angular-devkit/build-angular:extract-i18n"
 				},
 				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
+					"builder": "@angular-builders/jest:run",
+					"options": {}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"polyfills": ["zone.js", "zone.js/testing"],
-						"tsConfig": "projects/blog/tsconfig.spec.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/blog/public"
-							}
+						"lintFilePatterns": [
+							"projects/blog/**/*.ts",
+							"projects/blog/**/*.html"
 						],
-						"styles": ["projects/blog/src/styles.scss"],
-						"scripts": []
+						"eslintConfig": "projects/blog/eslint.config.js"
 					}
 				}
 			}
 		}
 	},
 	"cli": {
+		"schematicCollections": ["angular-eslint"],
 		"analytics": "241ab926-e089-418d-85b7-d5681b48ea84"
 	}
 }

@@ -16,6 +16,10 @@ describe('WidgetsComponent', () => {
 		fixture.detectChanges();
 	});
 
+	afterAll((done) => {
+		done();
+	});
+
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});

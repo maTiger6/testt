@@ -10,6 +10,10 @@ describe('AppComponent', () => {
 		}).compileComponents();
 	});
 
+	afterAll((done) => {
+		done();
+	});
+
 	it('should create the app', () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		const app = fixture.componentInstance;
