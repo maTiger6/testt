@@ -2,7 +2,7 @@
 	"name": "csz-frontend",
 	"version": "0.0.0",
 	"scripts": {
-		"build": "ng build",
+		"build": "ng build blog && ng build blog-domain && ng build widgets",
 		"lint": "ng lint",
 		"ng": "ng",
 		"prepare": "husky install",
